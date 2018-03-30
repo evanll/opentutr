@@ -1,0 +1,17 @@
+.profile-card__stars {
+  color: #f8be15;
+  text-align: center; }
+
+.profile-card__style {
+  width: 22rem;
+  margin: auto; }
+
+.profile__title {
+  color: #5bc0de; }
+
+.profile__review-count {
+  color: #000000; }
+
+.profile-card__text {
+  color: #5bc0de;
+  text-align: center; }

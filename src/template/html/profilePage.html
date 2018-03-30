@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/template/css/bootstrap.css">
     <link rel="stylesheet" href="/template/css/style.css">
     <link rel="stylesheet" href="/template/css/homepage.css">
+    <link rel="stylesheet" href="/template/css/profileCard.css">
 
     <title>Profile Page</title>
   </head>
@@ -22,18 +23,28 @@
         <div class = "col-lg-4 col-md-2 col-sm-6 col-xs-12 ">
         <!--  <img src="/template/assets/pp.jpg" class="rounded-circle" alt="Profile" width="200" height="200">-->
           <div class = "text-left">
-            <div class="card" style="width: 18rem;">
+            <div class="card profile-card__style">
               <img class="card-img-top" src="/template/assets/pp.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <p> Name : Harrison Boyns </p>
-                  <p> <i class = "fas fa-map-marker"></i> Bristol</p>
-                  <a href="#" class="btn btn-danger btn-l">Book</a>
+                <div>
+                  <p class = "profile-card__text "> Harrison Boyns </p>
+                  <p class = "profile-card__text" > <i class = "fas fa-map-marker"></i> <span> Bristol </span></p>
+                  <div class = "profile-result__stars">
+                  <div class = "profile-card__stars">
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "far fa-star"></i>
+                    <p> <span class = "profile__review-count">(30 Reviews)</span> </p>
+                  </div>
+                </div>
+                  <a href="#" class="btn btn-danger btn-l text-center">Book</a>
                 </div>
               </div>
             </div>
           </div>
           <div class = "col-lg-7 col-md-8 col-sm-0 col-xs-12 "><div class = "text-left">
-            <h3>Profile</h3>
+            <h3 class = "profile__title">Profile</h3>
             <p>
               Russell Group educated graduate with a predicted MSc Distinction from the
               University of Bristol in Computer Science. Currently in possession of a
@@ -46,7 +57,7 @@
               both conventional and abstract reasoning. Articulate with excellent communication skills.
             </p>
           </div></div>
-          <div class = "col-lg-1 col-md-2 col-sm-6 col-xs-12 "><div class = "text-center"><h3>Spare</h3></div></div>
+          <div class = "col-lg-1 col-md-2 col-sm-6 col-xs-12 "><div class = "text-center"><h3>£50.00</h3></div></div>
       </div>
     </div>
 
