@@ -1,3 +1,10 @@
+.search-result__title {
+  font-size: 2em;
+  margin-bottom: 0px; }
+
+.search-result__title a {
+  color: #000000; }
+
 .search-result__price {
   font-size: 2rem; }
 
