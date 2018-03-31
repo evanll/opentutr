@@ -1,3 +1,32 @@
+body{
+  background-color: white;
+}
+
+.profile-button__position{
+margin-top:15px;
+padding:12px 25px 12px 25px;
+border-radius:2px;
+background:#DF314D;
+border-color:transparent;
+font-size:14px;}
+
+
+.profile-container__pad{
+  padding: 15px;
+}
+
+.profile-pad{ <!-- Can easily edit tit location -->
+  padding-right: 70px;
+}
+
+.profile-bottom {
+    border-bottom: 1px solid #ccc;
+}
+
+
+.profile-column3__border{
+  border-left: 1px solid #ccc;
+}
 .profile-card__stars {
   color: #f8be15;
   text-align: center;
@@ -5,9 +34,9 @@
 
 .profile-card__style{
   margin: auto;
+  padding: 5px;
 }
 .profile__title {
-  color: #5bc0de;
 }
 
 .profile__review-count{
