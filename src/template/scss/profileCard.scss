@@ -3,19 +3,18 @@ body{
 }
 
 .profile-button__position{
-margin-top:15px;
-padding:12px 25px 12px 25px;
-border-radius:2px;
-background:#DF314D;
-border-color:transparent;
-font-size:14px;}
+
+  padding:10px 21px 10px 21px;
+  border-radius:1px;
+  border-color:transparent;
+}
 
 
 .profile-container__pad{
   padding: 15px;
 }
 
-.profile-pad{ //Can easily edit tit location
+.profile-pad{
   padding-right: 70px;
 }
 
@@ -34,7 +33,7 @@ font-size:14px;}
 
 .profile-card__style{
   margin: auto;
-  padding: 5px;
+  padding: 10px;
 }
 .profile__title {
 }
