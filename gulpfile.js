@@ -23,12 +23,12 @@ gulp.task('serve', ['sass'], function() {
     browserSync.init({
         server: {
           baseDir: "./src",
-          index: "/template/html/index.html"
+          index: "/template/xhtml/index.xhtml"
         }
     });
 
     gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/template/scss/*.scss'], ['sass']);
-    gulp.watch("src/template/html/*.html").on('change', browserSync.reload);
+    gulp.watch("src/template/xhtml/*.xhtml").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['js','serve']);
