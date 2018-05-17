@@ -1,0 +1,22 @@
+body, html {
+  height: 100%; }
+
+.centre {
+  height: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  float: none; }
+
+.bg {
+  /* The image used */
+  margin: 0;
+  background-image: url("/template/assets/helloquence-61189-unsplash.jpg");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
