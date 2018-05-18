@@ -1,9 +1,9 @@
-const store = require("../services/userAuth");
+const userAuth = require("../services/userAuth");
 
 // register route
 module.exports = app => {
   app.post("/register", (req, res) => {
-    store
+    userAuth
       .register({
         email: req.body.email,
         username: req.body.username,
@@ -17,7 +17,7 @@ module.exports = app => {
 
   // login route
   app.post("/login", (req, res) => {
-    store
+    userAuth
       .authenticate({
         username: req.body.username,
         password: req.body.password
