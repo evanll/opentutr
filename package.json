@@ -9,8 +9,9 @@
   },
   "scripts": {
     "start": "node index.js",
+    "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run start\" \"npm run client \""
+    "dev": "concurrently \"npm run server\" \"npm run client \""
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "concurrently": "^3.5.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.4"
   }
 }
