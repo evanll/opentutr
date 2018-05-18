@@ -7,4 +7,4 @@ pass: cf351252
 host: us-cdbr-iron-east-04.cleardb.net
 
 -- Login command
--- mysql -h us-cdbr-iron-east-04.cleardb.net -u b1c4051edaf341 -p
+-- mysql -h us-cdbr-iron-east-04.cleardb.net -u b1c4051edaf341 -p'cf351252'

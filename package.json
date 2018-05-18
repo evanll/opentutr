@@ -23,9 +23,10 @@
   },
   "homepage": "https://github.com/evanlal/webtech#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "concurrently": "^3.5.1",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "knex": "^0.14.6",
-    "mariasql": "^0.2.6"
+    "mysql": "^2.15.0"
   }
 }
