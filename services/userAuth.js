@@ -1,6 +1,12 @@
 const db = require("../db");
 const crypto = require("crypto");
 
+// module.exports = {
+//   register
+//
+//
+// }
+
 //auth
 module.exports = {
   register({ email, username, password, firstname, lastname, isTutor }) {
@@ -9,7 +15,7 @@ module.exports = {
     console.log(`New user ${username} with salt ${salt} and hash ${hash}`);
 
     // missing isTutor
-    db.query(
+    db.m (
       "INSERT INTO User (email, username, password_salt, password_hash, firstname, lastname) " +
         "VALUES (?, ?, ?, ?, ?, ?)",
       [email, username, salt, hash, firstname, lastname],
@@ -25,6 +31,8 @@ module.exports = {
       function(error, result, fields) {
         if (error) throw error;
         if (result.length == 0) {
+          // console.log(fields);
+          console.log(result[0].user);
           return {success: false};
         }
         const hash = encryptPasswordSalt(password, result[0].password_salt);

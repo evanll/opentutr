@@ -19,7 +19,7 @@ loginForm.addEventListener("submit", e => {
     if (status === 200) {
       alert("Login successful");
     } else {
-      alert("Login failed");
+      alert(status);
     }
   });
 });
