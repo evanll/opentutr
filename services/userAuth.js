@@ -15,7 +15,7 @@ module.exports = {
     console.log(`New user ${username} with salt ${salt} and hash ${hash}`);
 
     // missing isTutor
-    db.m (
+    db.query (
       "INSERT INTO User (email, username, password_salt, password_hash, firstname, lastname) " +
         "VALUES (?, ?, ?, ?, ?, ?)",
       [email, username, salt, hash, firstname, lastname],
