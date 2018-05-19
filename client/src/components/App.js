@@ -15,7 +15,7 @@ class App extends Component {
             <Route exact path="/search" component={Search}/>
             <Footer />
           </div>
-          </BrowserRouter>
+        </BrowserRouter>
       </div>
     );
   }
