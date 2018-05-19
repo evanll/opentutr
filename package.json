@@ -29,6 +29,9 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.17.4",
+    "react-tether": "^0.6.1",
+    "reactstrap": "^6.0.1",
+    "tether": "^1.4.4"
   }
 }
