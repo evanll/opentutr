@@ -3,7 +3,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Header from "./Header";
 import Footer from "./Footer";
-const Search = ()=> <h2>Search</h2>
+import Search from "./Search";
+import Profile from "./Profile";
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/search" component={Search}/>
+            <Route exact path="/tutor" component={Profile}/>
             <Footer />
           </div>
         </BrowserRouter>
