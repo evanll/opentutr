@@ -1,12 +1,6 @@
 const db = require("../db");
 const crypto = require("crypto");
 
-// module.exports = {
-//   register
-//
-//
-// }
-
 //auth
 module.exports = {
   register({ email, username, password, firstname, lastname, isTutor }) {
