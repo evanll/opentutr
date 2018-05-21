@@ -15,7 +15,8 @@ import "./css/bootstrap.css";
 import "./css/main.css";
 import "./css/style.css";
 
-const store = createStore(() => [], {}, applyMiddleware(reduxThunk));
+// pass the reducers to the store
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
   // if there's a state update the provider will update all children
@@ -24,4 +25,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector("#root")
 );
-//registerServiceWorker();

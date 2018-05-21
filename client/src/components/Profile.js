@@ -6,8 +6,8 @@ import { fetchTutor } from "../actions"
 
 class Profile extends Component {
   componentDidMount() {
+    console.log("comp mounted");
     this.props.fetchTutor();
-    console.log(this.props);
   }
 
   render() {
@@ -47,7 +47,7 @@ class Profile extends Component {
             </Col>
             <Col lg={7} xs={12}>
               <div className = "text-left2">
-                <h3 className = "profile__title">First Last</h3>
+                <h3 className = "profile__title">name {this.props.tutor.user_id}</h3>
                 <p>
                   Lorem ipsum dolor sit amet, eum illud ignota et, ne semper dicunt mea. An has doctus volumus similique, ad eirmod theophrastus vituperatoribus per. Cum an assum graeco mollis, sale causae diceret te sea. Est summo quando apeirian an, eum dicta numquam te. Ei civibus epicuri pri, eum audire quaeque et. Platonem tincidunt signiferumque pri at, no est verterem lucilius, augue quaeque temporibus ea per.
                   Graeco sanctus civibus qui no. Te nam omnes facilis dissentias, ea verear aperiam assueverit ius, at vel omnis nominavi officiis. Eum vide augue prodesset ne. Ei cetero aliquip eligendi pri, clita delectus vim ne, natum animal labores mei in.Assum possit integre at mel, ut eos vitae tractatos petentium. Case choro mel no, vim in magna erroribus. His cu semper ornatus, per ut solum delenit patrioque. Sensibus molestiae pro ut, esse elit ut nam.
@@ -70,7 +70,8 @@ class Profile extends Component {
 }
 
 function mapStateToProps(state) {
-  return { profile: state.profile };
+  console.log("map state called");
+  return { tutor: state.viewTutor };
 }
 
 export default connect(mapStateToProps, { fetchTutor })(Profile);

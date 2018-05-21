@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+
+// required by components to perform actionsS
 import { connect } from "axios";
 import * as actions from "../actions";
 

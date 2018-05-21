@@ -11,6 +11,7 @@ import { FETCH_TUTOR } from "./types"
 // };
 
 export const fetchTutor = () => async dispatch => {
+  console.log("waiting to dispatch fetchTutor action");
   const res = await axios.get("/api/tutor-profile");
   dispatch({ type: FETCH_TUTOR, payload: res.data });
 };

@@ -3,8 +3,8 @@ import { combineReducers } from "redux";
 import userAuthReducer from "./userAuthReducer";
 import profileReducer from "./profileReducer";
 
-
+// which state is produced by each reducer
 export default combineReducers({
   userAuth : userAuthReducer,
-  profile: profileReducer
+  viewTutor : profileReducer
 });
