@@ -16,6 +16,24 @@ userAuthRoutes(app);
 const tutorProfileRoute = require("./routes/tutorProfileRoute");
 tutorProfileRoute(app);
 
+// All tutor search
+const allTutorRoute = require("./routes/returnTutorRoute");
+allTutorRoute(app);
+
+// messages
+const specificMessageRoute = require("./routes/messageRoute");
+specificMessageRoute(app);
+
+const tutorInfoRoute = require("./routes/tutorInfoRoute");
+tutorInfoRoute(app);
+
+const insertTutorInfoRoute = require("./routes/insertTutorInfoRoute");
+insertTutorInfoRoute(app);
+
+// subject search
+const subjectRoute = require("./routes/subjectSearchRoute");
+subjectRoute(app);
+
 if (process.env.NODE_ENV === "production") {
   // express will send production files if the route is recognized
   app.use(express.static("client/build"));
