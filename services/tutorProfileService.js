@@ -1,15 +1,16 @@
 const db = require("../db");
 
-//auth
+//Wrap query in promise to avoid callbacks
 module.exports = {
   getTutorInfo({ tutor_id }) {
-    db.query (
-      "SELECT * From Tutor WHERE tutor_id = ?",
-      [tutor_id],
-      function(error, result, fields) {
-        if (error) throw error;
-        console.log(result[0]);
-      }
-    );
+    return new Promise((resolve, reject) => {
+      const query = "SELECT * From Tutor WHERE tutor_id = ?";
+      db.query(query, [tutor_id], (error, result, fields) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(result);
+      });
+    });
   }
 };

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from "axios";
+import * as actions from "../actions";
 
 import Header from "./Header";
 import Footer from "./Footer";
