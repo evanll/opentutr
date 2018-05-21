@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import "../css/profileCard.css";
-
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
+import { connect } from "react-redux";
+import { fetchTutor } from "../actions"
 
 class Profile extends Component {
+  componentDidMount() {
+    this.props.fetchTutor();
+    console.log(this.props);
+  }
+
   render() {
     return (
       <div>
@@ -63,4 +69,9 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+function mapStateToProps(state) {
+  return { profile: state.profile };
+}
+
+export default connect(mapStateToProps, { fetchTutor })(Profile);
+//export default Profile;
