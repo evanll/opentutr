@@ -18,6 +18,6 @@ export const fetchTutor = () => async dispatch => {
 
 export const searchTutor = () => async dispatch => {
   console.log("waiting to dispatch searchTutors action");
-  const res = await axios.get("/api/all-subjects");
+  const res = await axios.get("/api/all-tutor");
   dispatch({ type: SEARCH_TUTOR, payload: res.data });
 };

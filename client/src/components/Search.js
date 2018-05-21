@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "../css/search-result.css";
+import { connect } from "react-redux";
+import { searchTutor } from "../actions"
 
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
 
 class Search extends Component {
-  componentDidMount {
+  componentDidMount() {
     this.props.searchTutor();
   }
 
@@ -34,7 +36,7 @@ class Search extends Component {
                 <Col lg={7}>
                   <div className="float-left">
                     <CardTitle className="search-result__title">
-                      John Snow
+                      {tutor.firstname} {tutor.lastname}
                     </CardTitle>
                     <p>
                       <i className="fas fa-map-marker" /> Bristol
@@ -61,7 +63,7 @@ class Search extends Component {
                   <Button className="btn-primary">Book Now</Button>
                 </Col>
                 <Col lg={2}>
-                  <p className="text-center search-result__price">£900</p>
+                  <p className="text-center search-result__price">£{tutor.price}</p>
                 </Col>
               </Row>
             </Card>
