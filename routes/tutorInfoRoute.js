@@ -5,7 +5,7 @@ module.exports = app => {
     var tutor = req.params.tutor_id;
     if(tutor>0 && isFinite(tutor)){
       const result= await tutorInfo.getTutorInfo({ tutor_id : tutor});
-      res.send(result);
+      res.send(result[0]);
     }
     else{
       res.status(400).send({ message: 'invalid number supplied' });
