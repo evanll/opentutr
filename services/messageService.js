@@ -4,7 +4,7 @@ const db = require("../db");
 module.exports = {
   getMessages( {student_id, tutor_id} ) {
     return new Promise((resolve, reject) => {
-      const query = "SELECT subjectType FROM studentmessagetutor WHERE student_id = ? && tutor_id= ?";
+      const query = "SELECT U.firstname, U.lastname, SMT.subjectType FROM studentmessagetutor AS SMT JOIN Tutor AS T ON T.tutor_id = SMT.tutor_id JOIN User AS U ON U.user_id = T.user_id WHERE SMT.student_id = ? && SMT.tutor_id = ?";
       db.query(query, [student_id, tutor_id], (error, result, fields) => {
         if (error) {
           reject(error);
@@ -14,3 +14,5 @@ module.exports = {
     });
   }
 };
+
+// SELECT U.firstname, U.lastname, SMT.subjectType FROM studentmessagetutor AS SMT JOIN Tutor AS T ON T.tutor_id = SMT.tutor_id JOIN User AS U ON U.user_id = T.user_id WHERE SMT.student_id = 12 && SMT.tutor_id = 32;
