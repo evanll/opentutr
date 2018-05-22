@@ -1,7 +1,7 @@
-const searchSubject = require("../services/subjectSearchService");
+const searchSubject = require("../services/subjectTutorSearchService");
 
 module.exports = app => {
-  app.get("/api/all-subjects/:subject_id", async (req, res) => {
+  app.get("/api/all-tutors/:subject_id", async (req, res) => {
     var subject = req.params.subject_id;
     console.log(subject);
     if(subject>0 && isFinite(subject)){

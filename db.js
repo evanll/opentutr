@@ -10,6 +10,10 @@ var connection = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
+setInterval(function(){
+    connection.query('SELECT 1');
+}, 5000);
+
 connection.connect();
 
 // uncomment to test the connection, see mysql npm documentation

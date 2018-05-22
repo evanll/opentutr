@@ -1,4 +1,4 @@
-const findALlTutor = require("../services/returnTutorService");
+const findALlTutor = require("../services/returnAllTutorService");
 
 module.exports = app => {
   app.get("/api/all-tutor", async (req, res) => {

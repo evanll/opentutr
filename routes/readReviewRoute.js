@@ -1,10 +1,10 @@
-const insertTutorInfo = require("../services/insertTutorInfoServices");
+const specificReviews = require("../services/readReviewService");
 
 module.exports = app => {
-  app.get("/api/insertInfo/:tutor_id", async (req, res) => {
+  app.get("/api/allReview/:tutor_id", async (req, res) => {
     var tutor = req.params.tutor_id;
     if(isFinite(tutor) && tutor > 0){
-      const result= await insertTutorInfo.getMessages( {firstname : 'DROID'} );
+      const result= await specificReviews.getReviews( {tutor_id : tutor} );
       res.send(result);
     }
     else{

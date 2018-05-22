@@ -1,6 +1,7 @@
 const db = require("../db");
 
-//Wrap query in promise to avoid callbacks
+
+// I would scrap this class and use tutorinfo service for both
 module.exports = {
   getTutorInfo({ tutor_id }) {
     return new Promise((resolve, reject) => {
