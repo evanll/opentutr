@@ -1,16 +1,27 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+// auth
+const cookieSession = require("cookie-session");
+const passport = require("passport");
 
 const app = express();
-
 app.use(express.static("public"));
 app.use(bodyParser.json());
+// session management/ cookie parser
+app.use(
+  cookieSession({
+    keys: ["XVYucHHPtHY9&ukS"],
+    maxAge: 6000,
+    saveUnitialized: true
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Authentication endpoint
 const userAuthRoutes = require("./routes/userAuth");
 userAuthRoutes(app);
 //or require("./routes/userAuth")(app)
-//authentication
 
 // Tutor profile endpoint
 const tutorProfileRoute = require("./routes/tutorProfileRoute");

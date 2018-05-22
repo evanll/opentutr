@@ -21,3 +21,10 @@ export const searchTutor = () => async dispatch => {
   const res = await axios.get("/api/all-tutor");
   dispatch({ type: SEARCH_TUTOR, payload: res.data });
 };
+
+export const submitLogin = values => async dispatch => {
+  const res = await axios.post("/api/login", values);
+  console.log("login submited");
+
+  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};

@@ -15,13 +15,7 @@ loginForm.addEventListener("submit", e => {
   e.preventDefault();
   const username = loginForm.querySelector(".username").value;
   const password = loginForm.querySelector(".password").value;
-  post("/login", { username, password }).then(({ status }) => {
-    if (status === 200) {
-      alert("Login successful");
-    } else {
-      alert(status);
-    }
-  });
+  post("/login", { username, password });
 });
 
 function post(path, data) {

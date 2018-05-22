@@ -12,6 +12,12 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+// todo: remove
+// keep connection alive
+setInterval(function () {
+    connection.query('SELECT 1');
+}, 5000);
+
 // uncomment to test the connection, see mysql npm documentation
 // connection.query("SELECT 1 + 1 AS solution", function(error, results, fields) {
 //   if (error) throw error;
