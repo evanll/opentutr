@@ -16,22 +16,25 @@ module.exports = app => {
   });
 
   // login route
-  app.post("/api/login", (req, res) => {
-    userAuth.authenticate({
-      // check the request body to get data
-      username: req.body.username,
-      password: req.body.password
-    })
-    .then((result) => {
-      if (result.success) {
-        console.log(result.user_id);
-        // passport login
-        req.login(result.user_id, () => res.sendStatus(200));
+  app.post("/api/login", async (req, res) => {
+    try {
+      let user = await userAuth.authenticate({
+        // check the request body to get data
+        username: req.body.username,
+        password: req.body.password
+      });
+      // credentials do not match
+      if (user.userId == -1) {
+        console.log("Authentication failed.");
+        res.sendStatus(401)
       } else {
-        res.sendStatus(401);
+        // user authenticated, handle session with passportjs
+        console.log("User authenticated. UserId: " + user.userId);
+        req.login(user.userId, () => res.sendStatus(200));
       }
-    })
-    .catch((error) => console.log(error));
+    } catch(err) {
+       res.sendStatus(403)
+    }
   });
 
   // simple api endpoint to confirm that someone is logged in

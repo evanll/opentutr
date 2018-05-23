@@ -1,14 +1,5 @@
 import axios from "axios";
 import { FETCH_TUTOR, SEARCH_TUTOR, SEARCH_REVIEWS } from "./types"
-//
-// const fetchTutor = () => {
-//   return function(dispatch) {
-//     axios
-//     .get("/api/tutor-profile")
-//     .then(res => dispatch({type: FETCH_TUTOR, payload: res}));
-//   }
-//
-// };
 
 export const fetchTutor = () => async dispatch => {
   console.log("waiting to dispatch fetchTutor action");
@@ -24,10 +15,13 @@ export const searchTutor = () => async dispatch => {
 
 export const submitLogin = (values, history) => async dispatch => {
   const res = await axios.post("/api/login", values);
-  history.push("/");
-  console.log("login submited");
 
-  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+  // redirection
+  if (res.status == 200) {
+    history.push("/");
+  } else {
+    history.push("/login");
+  }
 };
 
 export const updateProfile = (values, history) => async dispatch => {
