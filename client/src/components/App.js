@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 // required by components to perform actionsS
-import { connect } from "axios";
-import * as actions from "../actions";
+import { connect } from "react-redux";
+import { fetchUser } from "../actions";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -16,6 +16,10 @@ import ProfileUpdate from "./UpdateProfile";
 import ReviewSend from "./ReviewSend";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
+
   render() {
     return (
       <div>
@@ -37,4 +41,5 @@ class App extends Component {
   }
 }
 
-export default App;
+// assign action to App as prop
+export default connect(null, { fetchUser })(App);

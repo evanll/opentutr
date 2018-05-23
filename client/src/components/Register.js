@@ -17,10 +17,10 @@ class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
       firstname: "",
       lastname: "",
       email: "",
+      username: "",
       password: "",
       areYouATutor: ""
     };
@@ -38,85 +38,92 @@ class Register extends Component {
   }
 
   onChange(event) {
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   render() {
     // deconstruct variables from state ES6 syntax
-    const { password, firstname, username, lastname, email, areYouATutor} = this.state;
+    const {
+      firstname,
+      lastname,
+      email,
+      username,
+      password,
+      areYouATutor
+    } = this.state;
     return (
       <Container>
         <Form onSubmit={this.handleSubmit}>
-      <FormGroup>
-        <Label for="username">Username</Label>
-        <Input
-          type="text"
-          value={username}
-          onChange={this.onChange}
-          name="username"
-          id="username"
-          placeholder="Enter username"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="firstname">First Name</Label>
-        <Input
-          type="text"
-          value={firstname}
-          onChange={this.onChange}
-          name="firstname"
-          id="firstname"
-          placeholder="Enter firstname"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="lastname">Last Name</Label>
-        <Input
-          type="lastname"
-          value={lastname}
-          onChange={this.onChange}
-          name="lastname"
-          id="lastname"
-          placeholder="Enter lastname"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="email">Email</Label>
-        <Input
-          type="email"
-          value={email}
-          onChange={this.onChange}
-          name="email"
-          id="email"
-          placeholder="Enter email"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="password">Password</Label>
-        <Input
-          type="password"
-          value={password}
-          onChange={this.onChange}
-          name="password"
-          id="password"
-          placeholder="Enter password"
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label for="areYouATutor">Are you a Tutor?</Label>
-        <Input
-          type="areYouATutor"
-          value={areYouATutor}
-          onChange={this.onChange}
-          name="areYouATutor"
-          id="areYouATutor"
-          placeholder="Are you a tutor?"
-        />
-      </FormGroup>
+          <FormGroup>
+            <Label for="firstname">First Name</Label>
+            <Input
+              type="text"
+              value={firstname}
+              onChange={this.onChange}
+              name="firstname"
+              id="firstname"
+              placeholder="Enter firstname"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="lastname">Last Name</Label>
+            <Input
+              type="text"
+              value={lastname}
+              onChange={this.onChange}
+              name="lastname"
+              id="lastname"
+              placeholder="Enter lastname"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="email">Email</Label>
+            <Input
+              type="email"
+              value={email}
+              onChange={this.onChange}
+              name="email"
+              id="email"
+              placeholder="Enter email"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="username">Username</Label>
+            <Input
+              type="text"
+              value={username}
+              onChange={this.onChange}
+              name="username"
+              id="username"
+              placeholder="Enter username"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="password">Password</Label>
+            <Input
+              type="password"
+              value={password}
+              onChange={this.onChange}
+              name="password"
+              id="password"
+              placeholder="Enter password"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="areYouATutor">
+              <Input
+                type="checkbox"
+                value={areYouATutor}
+                onChange={this.onChange}
+                name="areYouATutor"
+                id="areYouATutor"
+                placeholder="Are you a tutor?"
+              />{" "}
+              Are you a Tutor?
+            </Label>
+          </FormGroup>
 
-          <Button>
-            Submit
-          </Button>
+          <Button>Submit</Button>
         </Form>
       </Container>
     );
