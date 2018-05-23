@@ -28,6 +28,8 @@ export const submitLogin = (values, history) => async dispatch => {
   console.log("login submited");
 
   //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};
+
 export const searchReviews = () => async dispatch => {
   console.log("waiting to dispatch searchReviews action");
   const res = await axios.get("/api/allReview/12");
