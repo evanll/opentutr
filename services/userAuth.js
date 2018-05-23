@@ -5,8 +5,10 @@ const passport = require("passport");
 //auth
 module.exports = {
   register({ email, username, password, firstname, lastname, isTutor }) {
+    console.log('here');
     return new Promise((resolve, reject) => {
       // salt and hash password
+      console.log('here');
       const { salt, hash } = encryptPassword(password);
       console.log(`New user ${username} with salt ${salt} and hash ${hash}`);
 
@@ -17,6 +19,7 @@ module.exports = {
         [email, username, salt, hash, firstname, lastname],
         function(error, result, fields) {
           if (error) {
+            console.log('here');
             reject(error);
           }
           resolve();
@@ -26,7 +29,7 @@ module.exports = {
   },
   async authenticate({ username, password }) {
     const result = await fetchUserDetails(username);
-    const hash = encryptPasswordSalt(password, result[0].password_salt);
+    const hash = encryptPasswordSalt(password, result[0].salt);
     if (hash === result[0].password_hash) {
       console.log("User authenticated.");
       return {

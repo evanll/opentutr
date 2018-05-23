@@ -1,6 +1,6 @@
 import axios from "axios";
 import { FETCH_TUTOR, SEARCH_TUTOR, SEARCH_REVIEWS } from "./types"
-
+//
 // const fetchTutor = () => {
 //   return function(dispatch) {
 //     axios
@@ -26,6 +26,31 @@ export const submitLogin = (values, history) => async dispatch => {
   const res = await axios.post("/api/login", values);
   history.push("/");
   console.log("login submited");
+
+  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};
+
+export const updateProfile = (values, history) => async dispatch => {
+  const res = await axios.post("/api/insertInfo/:tutor_id", values);
+  history.push("/");
+  console.log("login submited");
+
+  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};
+
+export const submitReview = (values, history) => async dispatch => {
+  const res = await axios.post("/api/insertInfo/:tutor_id", values);
+  history.push("/");
+  console.log("login submited");
+
+  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};
+
+export const submitRegistration = (values, history) => async dispatch => {
+  const res = await axios.post("/services/userAuth", values);
+  console.log("Here!");
+  history.push("/");
+  console.log("Registration submited");
 
   //dispatch({ type: SEARCH_TUTOR, payload: res.data });
 };
