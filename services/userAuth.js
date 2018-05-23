@@ -25,14 +25,21 @@ module.exports = {
     });
   },
   async authenticate({ username, password }) {
-    const result = await fetchUserDetails(username);
-    const hash = encryptPasswordSalt(password, result[0].password_salt);
-    if (hash === result[0].password_hash) {
-      console.log("User authenticated.");
-      return {
-        success: true,
-        user_id: result[0].user_id
-      };
+    try {
+      const result = await fetchUserDetails(username);
+      // If results array is empty the user is not found
+      if (result.length === 0) {
+        return {userId: -1};
+      }
+      // Hashsalt password and compare with stored hash pass
+      const hash = encryptPasswordSalt(password, result[0].password_salt);
+      if (hash === result[0].password_hash) {
+        return {userId: result[0].user_id};
+      } else {
+        return {userId: -1};
+      }
+    } catch(err) {
+      console.log(err);
     }
   }
 }; //exports
@@ -44,9 +51,7 @@ function fetchUserDetails(username) {
     db.query(query, [username], (error, result, fields) => {
       if (error) {
         reject(err);
-        console.log("rejected");
       }
-      console.log("resolved");
       resolve(result);
     });
   });
@@ -70,11 +75,9 @@ function encryptPasswordSalt(password, salt) {
 
 passport.serializeUser((user_id, done) => {
   done(null, user_id);
-  console.log("searializeUser called");
 });
 
 passport.deserializeUser((user_id, done) => {
   done(null, user_id);
-  console.log("deserializeUser");
 });
 //auth
