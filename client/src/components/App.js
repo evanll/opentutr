@@ -9,6 +9,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Search from "./Search";
 import Profile from "./Profile";
+import Reviews from "./Reviews";
 import Login from "./Login";
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/search" component={Search}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/tutor/:tutor_id" component={Profile}/>
+            <Route exact path="/reviews" component={Reviews}/>
             <Footer />
           </div>
         </BrowserRouter>

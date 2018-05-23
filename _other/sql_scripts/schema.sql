@@ -58,12 +58,12 @@ CREATE TABLE StudentReviewTutor (
 );
 
 CREATE TABLE StudentMessageTutor (
+  messageCounter INTEGER PRIMARY KEY AUTO_INCREMENT,
   student_id INTEGER,
   tutor_id INTEGER,
   subjectType VARCHAR(1000) NOT NULL,
   FOREIGN KEY (student_id) REFERENCES Student(student_id),
-  FOREIGN KEY (tutor_id) REFERENCES Tutor(tutor_id),
-  PRIMARY KEY (student_id, tutor_id)
+  FOREIGN KEY (tutor_id) REFERENCES Tutor(tutor_id)
 );
 
 INSERT INTO User (email, username, password_salt, password_hash, firstname, lastname)  VALUES ('hb@bristol.ac.uk', 'boyns123', 'XXX', 'XXXX', 'Harrison', 'Boyns');

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_TUTOR, SEARCH_TUTOR } from "./types"
+import { FETCH_TUTOR, SEARCH_TUTOR, SEARCH_REVIEWS } from "./types"
 
 // const fetchTutor = () => {
 //   return function(dispatch) {
@@ -28,4 +28,8 @@ export const submitLogin = (values, history) => async dispatch => {
   console.log("login submited");
 
   //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+export const searchReviews = () => async dispatch => {
+  console.log("waiting to dispatch searchReviews action");
+  const res = await axios.get("/api/allReview/12");
+  dispatch({ type: SEARCH_REVIEWS, payload: res.data });
 };
