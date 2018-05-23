@@ -69,7 +69,7 @@ class Header extends Component {
             <NavLink href="/messages">Messages</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/logout">Logout</NavLink>
+            <NavLink href="/api/logout">Logout</NavLink>
           </NavItem>
         </Nav>
       );

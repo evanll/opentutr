@@ -57,7 +57,7 @@ module.exports = app => {
   app.get("/api/logout", (req, res) => {
     // attached by passport to the request
     req.logout();
-    // respond with undefined meaning that user is no longer signed
-    res.send(req.user);
+    // redirect user after logout
+    res.redirect("/");
   });
 };
