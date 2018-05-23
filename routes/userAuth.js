@@ -10,7 +10,7 @@ module.exports = app => {
         password: req.body.password,
         firstname: req.body.firstname,
         lastname: req.body.lastname,
-        isTutor: 0
+        isTutor: req.body.isTutor
       })
       .then(() => res.sendStatus(200));
   });
@@ -40,8 +40,17 @@ module.exports = app => {
   // simple api endpoint to confirm that someone is logged in
   // response with current user
   app.get("/api/user", (req, res) => {
-    console.log(req.user);
-    res.json({user_id: req.user});
+    if (req.user) {
+      res.json({
+        authenticated: true,
+        userId: req.user
+      });
+    } else {
+      res.json({
+        authenticated: false,
+        userId: null
+      });
+    }
   });
 
   // simple api endpoint to confirm that someone is logged in

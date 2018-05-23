@@ -5,21 +5,16 @@ const passport = require("passport");
 //auth
 module.exports = {
   register({ email, username, password, firstname, lastname, isTutor }) {
-    console.log('here');
     return new Promise((resolve, reject) => {
       // salt and hash password
-      console.log('here');
       const { salt, hash } = encryptPassword(password);
       console.log(`New user ${username} with salt ${salt} and hash ${hash}`);
-
-      // missing isTutor
       db.query(
-        "INSERT INTO User (email, username, password_salt, password_hash, firstname, lastname) " +
-          "VALUES (?, ?, ?, ?, ?, ?)",
-        [email, username, salt, hash, firstname, lastname],
+        "INSERT INTO User (email, username, password_salt, password_hash, firstname, lastname, isTutor) " +
+          "VALUES (?, ?, ?, ?, ?, ?, ?)",
+        [email, username, salt, hash, firstname, lastname, isTutor],
         function(error, result, fields) {
           if (error) {
-            console.log('here');
             reject(error);
           }
           resolve();
