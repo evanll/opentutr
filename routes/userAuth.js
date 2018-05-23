@@ -2,7 +2,7 @@ const userAuth = require("../services/userAuth");
 
 // register route
 module.exports = app => {
-  app.post("/register", (req, res) => {
+  app.post("/api/register", (req, res) => {
     userAuth
       .register({
         email: req.body.email,
@@ -16,19 +16,17 @@ module.exports = app => {
   });
 
   // login route
-  app.post("/login", (req, res) => {
+  app.post("/api/login", (req, res) => {
     userAuth.authenticate({
       // check the request body to get data
       username: req.body.username,
       password: req.body.password
     })
     .then((result) => {
-      req.session.views = 1; //remove
       if (result.success) {
-        // res.sendStatus(200);
         console.log(result.user_id);
         // passport login
-        req.login(result.user_id, () => res.redirect("/"));
+        req.login(result.user_id, () => res.sendStatus(200));
       } else {
         res.sendStatus(401);
       }
@@ -39,7 +37,8 @@ module.exports = app => {
   // simple api endpoint to confirm that someone is logged in
   // response with current user
   app.get("/api/user", (req, res) => {
-    res.send(req.user);
+    console.log(req.user);
+    res.json({user_id: req.user});
   });
 
   // simple api endpoint to confirm that someone is logged in

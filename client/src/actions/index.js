@@ -22,8 +22,9 @@ export const searchTutor = () => async dispatch => {
   dispatch({ type: SEARCH_TUTOR, payload: res.data });
 };
 
-export const submitLogin = values => async dispatch => {
+export const submitLogin = (values, history) => async dispatch => {
   const res = await axios.post("/api/login", values);
+  history.push("/");
   console.log("login submited");
 
   //dispatch({ type: SEARCH_TUTOR, payload: res.data });
