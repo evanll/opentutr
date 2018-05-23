@@ -9,6 +9,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Search from "./Search";
 import Profile from "./Profile";
+import Login from "./Login";
 
 class App extends Component {
   render() {
@@ -18,7 +19,8 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/search" component={Search}/>
-            <Route exact path="/tutor" component={Profile}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/tutor/:tutor_id" component={Profile}/>
             <Footer />
           </div>
         </BrowserRouter>

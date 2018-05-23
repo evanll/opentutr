@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "../css/search-result.css";
 import { connect } from "react-redux";
-import { searchTutor } from "../actions"
+import { searchTutor } from "../actions";
+import { Link } from "react-router-dom";
+
 
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
 
@@ -26,12 +28,12 @@ class Search extends Component {
             <Card body>
               <Row>
                 <Col lg={3}>
-                  <a href="/profile">
+                  <Link to={"/tutor/" + tutor.tutor_id}>
                     <img
                       className="rounded img-fluid"
                       src="/assets/default_user_md.png"
                     />
-                  </a>
+                  </Link>
                 </Col>
                 <Col lg={7}>
                   <div className="float-left">
@@ -58,7 +60,7 @@ class Search extends Component {
                   <CardText>
                     Lorem ipsum dolor sit amet, quot expetendis nec ea. Id has
                     sumo copiosae, eum sonet adipisci quaerendum eu...
-                    <a href="example-profile.xhtml">View example</a>
+                    <Link to={"/tutor/" + tutor.tutor_id}>View example</Link>
                   </CardText>
                   <Button className="btn-primary">Book Now</Button>
                 </Col>
