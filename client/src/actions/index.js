@@ -24,6 +24,31 @@ export const submitLogin = (values, history) => async dispatch => {
   }
 };
 
+export const updateProfile = (values, history) => async dispatch => {
+  const res = await axios.post("/api/insertInfo/:tutor_id", values);
+  history.push("/");
+  console.log("login submited");
+
+  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};
+
+export const submitReview = (values, history) => async dispatch => {
+  const res = await axios.post("/api/insertInfo/:tutor_id", values);
+  history.push("/");
+  console.log("login submited");
+
+  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};
+
+export const submitRegistration = (values, history) => async dispatch => {
+  const res = await axios.post("/services/userAuth", values);
+  console.log("Here!");
+  history.push("/");
+  console.log("Registration submited");
+
+  //dispatch({ type: SEARCH_TUTOR, payload: res.data });
+};
+
 export const searchReviews = () => async dispatch => {
   console.log("waiting to dispatch searchReviews action");
   const res = await axios.get("/api/allReview/12");
