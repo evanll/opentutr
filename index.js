@@ -24,6 +24,10 @@ app.get('/.well-known/acme-challenge/9ykeHYoUsHzShICO2zkef8Kg_ILPiCwDXtRQ69qSA7I
   res.send("9ykeHYoUsHzShICO2zkef8Kg_ILPiCwDXtRQ69qSA7I.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs");
 });
 
+app.get('/.well-known/acme-challenge/1L-NA9Zm1W0jW6Kwfd2gHqVVB2LSeYPL63fZq6a5AbY.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs', function(req, res) {
+  res.send("1L-NA9Zm1W0jW6Kwfd2gHqVVB2LSeYPL63fZq6a5AbY.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs");
+});
+
 // Authentication endpoint
 const userAuthRoutes = require("./routes/userAuth");
 userAuthRoutes(app);
