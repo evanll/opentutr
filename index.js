@@ -20,6 +20,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.get('/.well-known/acme-challenge/9ykeHYoUsHzShICO2zkef8Kg_ILPiCwDXtRQ69qSA7I.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs', function(req, res) {
+  res.send("9ykeHYoUsHzShICO2zkef8Kg_ILPiCwDXtRQ69qSA7I.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs");
+});
+
 // Authentication endpoint
 const userAuthRoutes = require("./routes/userAuth");
 userAuthRoutes(app);
