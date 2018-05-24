@@ -4,7 +4,7 @@ const db = require("../db");
 module.exports = {
   getReviews( {tutor_id} ) {
     return new Promise((resolve, reject) => {
-      const query = "SELECT STR.reviewRanking, U.username FROM studentreviewtutor AS STR JOIN Student AS S ON S.student_id = STR.student_id JOIN User AS U ON S.user_id = u.user_id WHERE tutor_id = ?";
+      const query = "SELECT STR.rating, U.username FROM Review AS STR JOIN Student AS S ON S.student_id = STR.student_id JOIN User AS U ON S.user_id = u.user_id WHERE tutor_id = ?";
       db.query(query, [tutor_id], (error, result, fields) => {
         if (error) {
           reject(error);

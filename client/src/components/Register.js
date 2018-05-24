@@ -22,7 +22,7 @@ class Register extends Component {
       email: "",
       username: "",
       password: "",
-      areYouATutor: ""
+      isTutor: "1"
     };
 
     // to retain this object instance when the function is passed to the handle
@@ -49,7 +49,7 @@ class Register extends Component {
       email,
       username,
       password,
-      areYouATutor
+      isTutor
     } = this.state;
     return (
       <Container>
@@ -113,10 +113,10 @@ class Register extends Component {
             <Label for="areYouATutor">
               <Input
                 type="checkbox"
-                value={areYouATutor}
+                value={isTutor}
                 onChange={this.onChange}
-                name="areYouATutor"
-                id="areYouATutor"
+                name="isTutor"
+                id="isTutor"
                 placeholder="Are you a tutor?"
               />{" "}
               Are you a Tutor?

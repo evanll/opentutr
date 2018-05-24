@@ -4,23 +4,17 @@ const passport = require("passport");
 
 //auth
 module.exports = {
-  register({ email, username, password, firstname, lastname, isTutor }) {
-    return new Promise((resolve, reject) => {
-      // salt and hash password
-      const { salt, hash } = encryptPassword(password);
-      console.log(`New user ${username} with salt ${salt} and hash ${hash}`);
-      db.query(
-        "INSERT INTO User (email, username, password_salt, password_hash, firstname, lastname, isTutor) " +
-          "VALUES (?, ?, ?, ?, ?, ?, ?)",
-        [email, username, salt, hash, firstname, lastname, isTutor],
-        function(error, result, fields) {
-          if (error) {
-            reject(error);
-          }
-          resolve();
-        }
-      );
-    });
+  async register({ email, username, password, firstname, lastname, isTutor }) {
+    console.log(isTutor);
+    try {
+      const result = await createNewUser({ email, username, password, firstname, lastname, isTutor });
+      if (isTutor) {
+        await registerAsTutor(result.insertId);
+      }
+      return result.insertId;
+    } catch(err) {
+      console.log(err);
+    }
   },
   async authenticate({ username, password }) {
     try {
@@ -41,6 +35,40 @@ module.exports = {
     }
   }
 }; //exports
+
+function createNewUser({ email, username, password, firstname, lastname, isTutor }) {
+  return new Promise((resolve, reject) => {
+    // salt and hash password
+    const { salt, hash } = encryptPassword(password);
+    console.log(salt);
+    console.log(hash);
+    db.query(
+      "INSERT INTO User (email, username, password_salt, password_hash, firstname, lastname, isTutor) " +
+        "VALUES (?, ?, ?, ?, ?, ?, ?)",
+      [email, username, salt, hash, firstname, lastname, isTutor],
+      function(error, result, fields) {
+        if (error) {
+          reject(error);
+        }
+        // return generated id to create login session
+        resolve(result);
+      }
+    );
+  });
+}
+
+function registerAsTutor(user_id) {
+  return new Promise((resolve, reject) => {
+    const query =
+      "INSERT INTO Tutor (user_id) VALUES (?)";
+    db.query(query, [user_id], (error, result, fields) => {
+      if (error) {
+        reject(err);
+      }
+      resolve(result);
+    });
+  });
+}
 
 function fetchUserDetails(username) {
   return new Promise((resolve, reject) => {

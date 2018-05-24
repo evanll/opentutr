@@ -2,17 +2,21 @@ const userAuth = require("../services/userAuth");
 
 // register route
 module.exports = app => {
-  app.post("/api/register", (req, res) => {
-    userAuth
-      .register({
-        email: req.body.email,
-        username: req.body.username,
-        password: req.body.password,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        isTutor: req.body.isTutor
-      })
-      .then(() => res.sendStatus(200));
+  app.post("/api/register", async (req, res) => {
+    try {
+      const userId = await userAuth.register({
+          email: req.body.email,
+          username: req.body.username,
+          password: req.body.password,
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          isTutor: req.body.isTutor
+        });
+      // instant login
+      req.login(userId, () => res.sendStatus(200));
+    } catch(err) {
+      console.log(err);
+    }
   });
 
   // login route

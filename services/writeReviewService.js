@@ -4,7 +4,7 @@ const db = require("../db");
 module.exports = {
   review( {reviewRanking, student_id, tutor_id} ) {
     return new Promise((resolve, reject) => {
-      const query = "INSERT INTO studentreviewtutor (reviewRanking, student_id, tutor_id) VALUES (?, ?, ?)";
+      const query = "INSERT INTO Review (rating, student_id, tutor_id) VALUES (?, ?, ?)";
       db.query(query, [reviewRanking, student_id, tutor_id], (error, result, fields) => {
         if (error) {
           reject(error);
