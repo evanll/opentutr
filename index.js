@@ -6,6 +6,7 @@ const passport = require("passport");
 // requirements for https
 const https = require("https");
 const fs = require("fs");
+const forceSSLMiddleware = require("./services/forceSSLMiddleware");
 
 const app = express();
 app.use(express.static("public"));
@@ -58,6 +59,7 @@ insertTutorInfoRoute(app);
 const subjectRoute = require("./routes/tutorSearchRoutes");
 subjectRoute(app);
 
+// Production settings for react client
 if (process.env.NODE_ENV === "production") {
   // express will send production files if the route is recognized
   app.use(express.static("client/build"));
@@ -69,14 +71,18 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// To get the port from Heroku or 5000 if in dev
+// Production force SSL forceSSLMiddleware
+app.use(forceSSLMiddleware);
+
+// Get the port for production server or 5000 if in dev
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 
-const options = {
-  key: fs.readFileSync('./etc/letsencrypt/live/opentutr.com/privkey.pem'),
-  cert: fs.readFileSync('./etc/letsencrypt/live/opentutr.com/fullchain.pem')
-};
-
-// listen https standard port
-https.createServer(options, app).listen(443);
+// // Use sudo to start dev server for ports < 1024
+// const options = {
+//   key: fs.readFileSync('./etc/openssl/live/opentutr.com/privkey.pem'),
+//   cert: fs.readFileSync('./etc/openssl/live/opentutr.com/fullchain.pem')
+// };
+//
+// // listen https standard port
+// https.createServer(options, app).listen(443);
