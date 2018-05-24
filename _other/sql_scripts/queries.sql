@@ -29,11 +29,3 @@ JOIN Tutor AS T ON T.tutor_id = TS.tutor_id
 JOIN User AS U ON T.user_id = U.user_id
 WHERE S.subject_id = ?
 ORDER BY T.rate
-
-
-
-SELECT U.firstname, U.lastname, T.description, S.name, T.rate FROM Tutor AS T
-JOIN User AS U ON T.user_id = U.user_id
-JOIN TutorSubject AS TS ON T.tutor_id = TS.tutor_id
-JOIN Subject AS S ON S.subject_id = TS.subject_id
-WHERE S.subject_id = ?

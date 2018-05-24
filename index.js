@@ -25,10 +25,6 @@ const userAuthRoutes = require("./routes/userAuth");
 userAuthRoutes(app);
 //or require("./routes/userAuth")(app)
 
-// Tutor profile endpoint
-const tutorProfileRoute = require("./routes/tutorProfileRoute");
-tutorProfileRoute(app);
-
 // reviews endpoint
 const allReviews = require("./routes/readReviewRoute");
 allReviews(app);
@@ -49,14 +45,14 @@ allTutorRoute(app);
 const specificMessageRoute = require("./routes/readMessageRoute");
 specificMessageRoute(app);
 
-const tutorInfoRoute = require("./routes/tutorInfoRoute");
-tutorInfoRoute(app);
+const tutorInfoRoutes = require("./routes/tutorInfoRoutes");
+tutorInfoRoutes(app);
 
 const insertTutorInfoRoute = require("./routes/updateTutorInfoRoute");
 insertTutorInfoRoute(app);
 
 // subject search
-const subjectRoute = require("./routes/subjectTutorSearchRoute");
+const subjectRoute = require("./routes/tutorSearchRoutes");
 subjectRoute(app);
 
 if (process.env.NODE_ENV === "production") {

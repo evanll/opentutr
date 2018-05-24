@@ -3,13 +3,14 @@ import "../css/search-result.css";
 import { connect } from "react-redux";
 import { searchTutor } from "../actions";
 import { Link } from "react-router-dom";
+import { calculateReviewStars } from "../js/helpers";
 
 
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
 
 class Search extends Component {
   componentDidMount() {
-    this.props.searchTutor();
+    this.props.searchTutor(1);
   }
 
   render() {
@@ -31,7 +32,7 @@ class Search extends Component {
                   <Link to={"/tutor/" + tutor.tutor_id}>
                     <img
                       className="rounded img-fluid"
-                      src="/assets/default_user_md.png"
+                      src="/assets/images/default_user_md.png"
                     />
                   </Link>
                 </Col>
@@ -41,19 +42,16 @@ class Search extends Component {
                       {tutor.firstname} {tutor.lastname}
                     </CardTitle>
                     <p>
-                      <i className="fas fa-map-marker" /> Bristol
+                      <i className="fas fa-map-marker" /> {tutor.location} <br/>
+                      <i className="fas fa-book" /> {tutor.subject}
                     </p>
                   </div>
                   <div className="float-right">
                     <div className="search-result__stars">
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="far fa-star" />
+                      {calculateReviewStars(tutor.totalrating)}
                     </div>
                     <p className="search-result__reviews text-right">
-                      (20 reviews)
+                      ({tutor.totalreviews} reviews)
                     </p>
                   </div>
                   <div className="clearfix" />
@@ -65,7 +63,7 @@ class Search extends Component {
                   <Button className="btn-primary">Book Now</Button>
                 </Col>
                 <Col lg={2}>
-                  <p className="text-center search-result__price">£{tutor.price}</p>
+                  <p className="text-center search-result__price">£{tutor.rate}</p>
                 </Col>
               </Row>
             </Card>
