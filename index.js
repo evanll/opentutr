@@ -1,13 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// auth
+// requirements for Authentication
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+// requirements for https
+const https = require("https");
+const fs = require("fs");
 
 const app = express();
-//app.set('trust proxy', 1);
 app.use(express.static("public"));
 app.use(bodyParser.json());
+
 // session management/ cookie parser
 app.use(
   cookieSession({
@@ -19,14 +22,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.get('/.well-known/acme-challenge/9ykeHYoUsHzShICO2zkef8Kg_ILPiCwDXtRQ69qSA7I.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs', function(req, res) {
-  res.send("9ykeHYoUsHzShICO2zkef8Kg_ILPiCwDXtRQ69qSA7I.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs");
-});
-
-app.get('/.well-known/acme-challenge/1L-NA9Zm1W0jW6Kwfd2gHqVVB2LSeYPL63fZq6a5AbY.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs', function(req, res) {
-  res.send("1L-NA9Zm1W0jW6Kwfd2gHqVVB2LSeYPL63fZq6a5AbY.Fynu6BpcpR593p8yrZHH2oMn72u2sFVKf1kaIDaSNcs");
-});
 
 // Authentication endpoint
 const userAuthRoutes = require("./routes/userAuth");
@@ -73,6 +68,15 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
 // To get the port from Heroku or 5000 if in dev
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
+
+const options = {
+  key: fs.readFileSync('./etc/letsencrypt/live/opentutr.com/privkey.pem'),
+  cert: fs.readFileSync('./etc/letsencrypt/live/opentutr.com/fullchain.pem')
+};
+
+// listen https standard port
+https.createServer(options, app).listen(443);
