@@ -6,6 +6,10 @@ body, html {
   height: 100%;
 }
 
+.wrapper {
+  padding: 0px;
+}
+
 .centre{
   height: 100%;
   overflow: hidden;
@@ -18,8 +22,7 @@ body, html {
 
 .bg {
     /* The image used */
-    margin : 0;
-    background-image: url('/assets/images/helloquence-61189-unsplash.jpg');
+    background-image: url('/assets/images/hero-bg.jpg');
     /* Full height */
     min-height: 400px;
     height: 80vh;
@@ -40,7 +43,7 @@ body, html {
 
 .hero {
     position: absolute;
-    top: 50%;
+    bottom: 50%;
     left: 50%;
     z-index: 3;
     color: #fff;
@@ -55,23 +58,27 @@ body, html {
 
 //Hero Search Box
 .hero-search-box {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
     padding: 15px;
-    margin-top: -20px;
     z-index: 90;
     border-radius: 20px 20px 0 0;
     color: #ffffff;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -o-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
 
     @media (min-width: 990px) {
       margin-top: -280px;
-      background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
       border-radius: 4px;
       color: #ffffff;
 }
 }
 
 .hero__search-input{
-  min-width: 200px;
+  min-width: 300px;
   margin-right: 10px;
 }

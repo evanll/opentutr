@@ -21,7 +21,7 @@ export const submitLogin = (values, history) => async dispatch => {
   const res = await axios.post("/api/login", values);
 
   // redirection
-  if (res.status == 200) {
+  if (res.status === 200) {
     history.push("/");
   } else {
     history.push("/login");

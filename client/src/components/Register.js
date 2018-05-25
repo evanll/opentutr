@@ -6,8 +6,7 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
-  FormText
+  Input
 } from "reactstrap";
 import { submitRegistration } from "../actions";
 // redirection after login
@@ -57,6 +56,7 @@ class Register extends Component {
           <FormGroup>
             <Label for="firstname">First Name</Label>
             <Input
+              required
               type="text"
               value={firstname}
               onChange={this.onChange}
@@ -68,6 +68,7 @@ class Register extends Component {
           <FormGroup>
             <Label for="lastname">Last Name</Label>
             <Input
+              required
               type="text"
               value={lastname}
               onChange={this.onChange}
@@ -79,6 +80,7 @@ class Register extends Component {
           <FormGroup>
             <Label for="email">Email</Label>
             <Input
+              required
               type="email"
               value={email}
               onChange={this.onChange}
@@ -90,6 +92,7 @@ class Register extends Component {
           <FormGroup>
             <Label for="username">Username</Label>
             <Input
+              required
               type="text"
               value={username}
               onChange={this.onChange}
@@ -101,6 +104,7 @@ class Register extends Component {
           <FormGroup>
             <Label for="password">Password</Label>
             <Input
+              required
               type="password"
               value={password}
               onChange={this.onChange}
@@ -111,6 +115,8 @@ class Register extends Component {
           </FormGroup>
           <FormGroup>
             <Label for="areYouATutor">
+              Register as Tutor?
+              <br/>
               <Input
                 type="checkbox"
                 value={isTutor}
@@ -118,8 +124,8 @@ class Register extends Component {
                 name="isTutor"
                 id="isTutor"
                 placeholder="Are you a tutor?"
-              />{" "}
-              Are you a Tutor?
+                style = {{margiLeft: '0em'}}
+              />
             </Label>
           </FormGroup>
 

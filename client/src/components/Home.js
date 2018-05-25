@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
-
-//import { fetchTutor } from "../actions"
 
 import { Container, Row, Col, Button } from "reactstrap";
 import "../css/home.css";
@@ -12,10 +9,6 @@ class Home extends Component {
   state = {
     selectedOption: ""
   };
-  componentDidMount() {
-    //this.props.fetchTutor(this.props.match.params.tutorId);
-    // console.log(this.props);
-  }
 
   handleChange = selectedOption => {
     this.setState({ selectedOption });
@@ -34,32 +27,28 @@ class Home extends Component {
         </div>
         <Container>
           <div className="hero-search-box">
-            <form
-              className="navbar-form navbar-right"
-              action="/search"
-              method="GET"
-            >
-              <div className="form-group">
-                <input type="hidden" name="filter" value="subject" />
-                <Select
-                  className="hero__search-input"
-                  name="subjectid"
-                  value={selectedOption}
-                  onChange={this.handleChange}
-                  options={[
-                    // TODO: query
-                    { value: "1", label: "German" },
-                    { value: "2", label: "French" },
-                    { value: "3", label: "evan" },
-                    { value: "4", label: "hairy" },
-                    { value: "5", label: "French" }
-                  ]}
-                />
-                <span className="input-group-addon" />
-                <button type="submit" className="btn btn-danger">
-                  Search
-                </button>
-              </div>
+          <form
+            action="/search"
+            method="GET"
+          >
+            <Row className="center-block">
+                    <input type="hidden" name="filter" value="subject" />
+                    <Select required
+                      className="hero__search-input"
+                      name="subjectid"
+                      value={selectedOption}
+                      onChange={this.handleChange}
+                      options={[
+                        // TODO: query
+                        { value: "1", label: "Math" },
+                        { value: "2", label: "Physics" },
+                        { value: "3", label: "Chemistry" }
+                      ]}
+                    />
+                  <button type="submit" className="btn btn-danger">
+                    Search
+                  </button>
+            </Row>
             </form>
           </div>
         </Container>
@@ -68,9 +57,4 @@ class Home extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  //return { tutor: state.viewTutor };
-}
-
 export default Home;
-//export default Profile;

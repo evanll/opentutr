@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import logo from './logo.svg';
 import { uploadPhoto } from "../js/helpers";
 import { sendFile } from "../js/helpers";
 

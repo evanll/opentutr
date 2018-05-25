@@ -6,8 +6,7 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
-  FormText
+  Input
 } from "reactstrap";
 import { submitReview } from "../actions";
 // redirection after login

@@ -2,10 +2,7 @@ import { SEARCH_TUTOR } from "../actions/types";
 
 const initialState = [];
 
-// = {} so state is not undefined
 export default function(state = initialState, action) {
-  console.log("what action:");
-  console.log(action);
   switch (action.type) {
     case SEARCH_TUTOR:
       return action.payload;

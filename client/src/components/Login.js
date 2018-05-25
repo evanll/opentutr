@@ -6,8 +6,7 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
-  FormText
+  Input
 } from "reactstrap";
 import { submitLogin } from "../actions";
 // redirection after login
@@ -45,7 +44,7 @@ class Login extends Component {
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
             <Label for="username">Username</Label>
-            <Input
+            <Input required
               type="text"
               value={username}
               onChange={this.onChange}
@@ -57,6 +56,7 @@ class Login extends Component {
           <FormGroup>
             <Label for="password">Password</Label>
             <Input
+              required
               type="password"
               value={password}
               onChange={this.onChange}
