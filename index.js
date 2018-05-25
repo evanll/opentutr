@@ -12,6 +12,9 @@ const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.json());
 
+// Production force SSL forceSSLMiddleware
+app.use(forceSSLMiddleware);
+
 // session management/ cookie parser
 app.use(
   cookieSession({
@@ -70,9 +73,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
-
-// Production force SSL forceSSLMiddleware
-app.use(forceSSLMiddleware);
 
 // Get the port for production server or 5000 if in dev
 const PORT = process.env.PORT || 5000;

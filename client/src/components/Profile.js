@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/profileCard.css";
+import "../css/profile.css";
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
 import { connect } from "react-redux";
 import { fetchTutor } from "../actions"

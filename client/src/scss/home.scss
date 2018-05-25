@@ -1,15 +1,12 @@
+/**
+  * Home page style
+  */
+
 body, html {
-    height: 100%;
-}
-
-.mainHeader{
-
-
+  height: 100%;
 }
 
 .centre{
-
-
   height: 100%;
   overflow: hidden;
   padding: 10px 0;
@@ -22,11 +19,9 @@ body, html {
 .bg {
     /* The image used */
     margin : 0;
-    background-image: url('/template/assets/helloquence-61189-unsplash.jpg');
-
+    background-image: url('/assets/images/helloquence-61189-unsplash.jpg');
     /* Full height */
     height: 100%;
-
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
