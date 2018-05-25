@@ -15,7 +15,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(forceSSLMiddleware);
 }
 
+// Static files
 app.use(express.static("public"));
+app.use("/api/user-images", express.static("userdata/images"));
+
 app.use(bodyParser.json());
 
 // session management/ cookie parser

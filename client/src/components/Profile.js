@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstr
 import { connect } from "react-redux";
 import { fetchTutor } from "../actions"
 import { calculateReviewStars } from "../js/helpers";
-import { getMethod } from "../js/helpers";
+import { getProfileImage } from "../js/helpers";
 
 class Profile extends Component {
   componentDidMount() {
@@ -20,7 +20,7 @@ class Profile extends Component {
             <Col lg={3} xs={12}>
               <div className = "text-left">
                 <Card className="profile-card__style">
-                  <img className="card-img-top" src={getMethod(this.props.tutor.firstname)} alt="profile image"/>
+                  <img className="card-img-top" src={getProfileImage(this.props.tutor.user_id)} alt="profile image"/>
                   <p className = "profile-card__text" >
                     <h3 className = "profile__title">{this.props.tutor.firstname} {this.props.tutor.lastname}</h3>
                     <i className = "fas fa-map-marker"></i> <span> {this.props.tutor.location}</span>

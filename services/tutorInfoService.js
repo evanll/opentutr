@@ -6,7 +6,7 @@ module.exports = {
   getTutorInfo(tutor_id) {
     return new Promise((resolve, reject) => {
       const query =
-      "SELECT U.firstname, U.lastname, T.tutor_id, T.location, T.description, " +
+      "SELECT U.user_id, U.firstname, U.lastname, T.tutor_id, T.location, T.description, " +
       "S.name AS subject, T.rate, R1.totalreviews, R1.totalrating FROM Tutor AS T " +
       "JOIN User AS U ON T.user_id = U.user_id " +
       "JOIN TutorSubject AS TS ON T.tutor_id = TS.tutor_id " +

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { searchTutor } from "../actions";
 import { Link } from "react-router-dom";
 
-import { getMethod } from "../js/helpers";
+import { getProfileImage } from "../js/helpers";
 import { calculateReviewStars } from "../js/helpers";
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
 import "../css/search.css";
@@ -32,7 +32,7 @@ class Search extends Component {
                   <Link to={"/tutor/" + tutor.tutor_id}>
                     <img
                       className="rounded img-fluid"
-                      src= {getMethod(tutor.firstname)}
+                      src= {getProfileImage(tutor.user_id)}
                     />
                   </Link>
                 </Col>
