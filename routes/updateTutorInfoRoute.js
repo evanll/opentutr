@@ -7,7 +7,7 @@ module.exports = app => {
   app.get("/api/insertInfo/:tutor_id", async (req, res) => {
     var tutor = req.params.tutor_id;
     if(isFinite(tutor) && tutor > 0){
-      const result= await insertTutorInfo.getMessages( {description : 'Boo JS', tutor_id : tutor} );   // This can be expanded as appropriate
+      const result= await insertTutorInfo.getMessages( {description : 'Boo JS', tutor_id : 162} );   // This can be expanded as appropriate
       res.send(result);
     }
     else{

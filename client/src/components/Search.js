@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { searchTutor } from "../actions";
 import { Link } from "react-router-dom";
 import { calculateReviewStars } from "../js/helpers";
+import { getMethod } from "../js/helpers";
 
 
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
@@ -32,7 +33,7 @@ class Search extends Component {
                   <Link to={"/tutor/" + tutor.tutor_id}>
                     <img
                       className="rounded img-fluid"
-                      src="/assets/images/default_user_md.png"
+                      src= {getMethod(tutor.firstname)}
                     />
                   </Link>
                 </Col>

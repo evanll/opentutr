@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import logo from './logo.svg';
+import { uploadPhoto } from "../js/helpers";
+import { sendFile } from "../js/helpers";
+
 import {
   Container,
   Button,
@@ -18,7 +22,8 @@ class UpdateProfile extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      fileToUpoad: null
     };
 
     // to retain this object instance when the function is passed to the handle
@@ -34,7 +39,21 @@ class UpdateProfile extends Component {
   }
 
   onChange(event) {
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({[event.target.name]: event.target.value
+    })
+  }
+
+  fileReaderHandler = event => {
+    console.log(event.target.files[0]);
+    this.setState({
+      fileToUpoad : event.target.files[0]
+    })
+  }
+
+  fileToTheData = () => {
+    console.log('The file is the following' + this.state.fileToUpoad);
+    console.log(this.state.fileToUpoad);
+    sendFile(this.state.fileToUpoad);
   }
 
   render() {
@@ -53,6 +72,11 @@ class UpdateProfile extends Component {
               id="subject"
               placeholder="Enter subject"
             />
+            <div>
+            <Label>ProfilePicture</Label>
+            <input type = "file" onChange = {this.fileReaderHandler}/>
+            <button onClick = {this.fileToTheData}> Upoload image </button>
+            </div>
           </FormGroup>
           <FormGroup>
             <Label for="firstname">Firstname</Label>
