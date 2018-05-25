@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../css/search-result.css";
 import { connect } from "react-redux";
 import { searchReviews } from "../actions"
 
@@ -28,7 +27,7 @@ class Review extends Component {
               {review.reviewRanking} {review.student}
             </CardTitle>
             <p>
-            
+
             </p>
             <CardText>
             </CardText>

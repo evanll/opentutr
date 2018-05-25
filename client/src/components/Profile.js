@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/profileCard.css";
+import "../css/profile.css";
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
 import { connect } from "react-redux";
 import { fetchTutor } from "../actions"
@@ -8,7 +8,8 @@ import { getMethod } from "../js/helpers";
 
 class Profile extends Component {
   componentDidMount() {
-    this.props.fetchTutor(1);
+    this.props.fetchTutor(this.props.match.params.tutorId);
+    // console.log(this.props);
   }
 
   render() {

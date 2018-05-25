@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import "../css/search-result.css";
 import { connect } from "react-redux";
 import { searchTutor } from "../actions";
 import { Link } from "react-router-dom";
-import { calculateReviewStars } from "../js/helpers";
+
 import { getMethod } from "../js/helpers";
-
-
+import { calculateReviewStars } from "../js/helpers";
 import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
+import "../css/search.css";
 
 class Search extends Component {
   componentDidMount() {
@@ -25,7 +24,7 @@ class Search extends Component {
   renderList() {
     return this.props.tutors.map(tutor => {
       return (
-        <Container key={tutor._id}>
+        <Container key={tutor._id} className="search-result__box">
           <Row>
             <Card body>
               <Row>
@@ -40,7 +39,9 @@ class Search extends Component {
                 <Col lg={7}>
                   <div className="float-left">
                     <CardTitle className="search-result__title">
-                      {tutor.firstname} {tutor.lastname}
+                      <Link to={"/tutor/" + tutor.tutor_id}>
+                        {tutor.firstname} {tutor.lastname}
+                      </Link>
                     </CardTitle>
                     <p>
                       <i className="fas fa-map-marker" /> {tutor.location} <br/>
@@ -57,11 +58,11 @@ class Search extends Component {
                   </div>
                   <div className="clearfix" />
                   <CardText>
-                    Lorem ipsum dolor sit amet, quot expetendis nec ea. Id has
-                    sumo copiosae, eum sonet adipisci quaerendum eu...
-                    <Link to={"/tutor/" + tutor.tutor_id}>View example</Link>
+                    {tutor.description}...
                   </CardText>
-                  <Button className="btn-primary">Book Now</Button>
+                  <Link to={"/tutor/" + tutor.tutor_id}>
+                    <Button className="btn-primary">Book Now</Button>
+                  </Link>
                 </Col>
                 <Col lg={2}>
                   <p className="text-center search-result__price">£{tutor.rate}</p>

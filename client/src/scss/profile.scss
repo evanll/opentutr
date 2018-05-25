@@ -1,29 +1,26 @@
-body{
-  background-color: white;
+/**
+  *  Profile style
+  */
+
+.profile-button__position {
+  padding: 10px 21px 10px 21px;
+  border-radius: 1px;
+  border-color: transparent;
 }
 
-.profile-button__position{
-
-  padding:10px 21px 10px 21px;
-  border-radius:1px;
-  border-color:transparent;
-}
-
-
-.profile-container__pad{
+.profile-container__pad {
   padding: 15px;
 }
 
-.profile-pad{
+.profile-pad {
   padding-right: 70px;
 }
 
 .profile-bottom {
-    border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
-
-.profile-column3__border{
+.profile-column3__border {
   border-left: 1px solid #ccc;
 }
 .profile-card__stars {
@@ -31,14 +28,14 @@ body{
   text-align: center;
 }
 
-.profile-card__style{
+.profile-card__style {
   margin: auto;
   padding: 10px;
 }
 .profile__title {
 }
 
-.profile__review-count{
+.profile__review-count {
   color: #000000;
 }
 
@@ -46,11 +43,9 @@ body{
   color: #5bc0de;
   font-size: 2rem;
   text-align: center;
-
 }
 
 .profile-card__text {
   color: #5bc0de;
   text-align: center;
-
 }

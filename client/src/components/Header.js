@@ -84,7 +84,7 @@ class Header extends Component {
           <Row>
             <Navbar color="light" light expand="md">
               <NavbarBrand href="/">
-                <img class="logo" src="/template/assets/logo.svg" alt="Tutors" />
+                <img class="logo" src="/assets/images/logo.svg" alt="opentutr logo" />
               </NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
