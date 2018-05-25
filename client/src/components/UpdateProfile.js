@@ -75,7 +75,7 @@ class UpdateProfile extends Component {
             <div>
             <Label>ProfilePicture</Label>
             <input type = "file" onChange = {this.fileReaderHandler}/>
-            <button onClick = {this.fileToTheData}> Upoload image </button>
+            <button onClick = {this.fileToTheData}> Upload Image </button>
             </div>
           </FormGroup>
           <FormGroup>
