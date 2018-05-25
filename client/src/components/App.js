@@ -14,6 +14,7 @@ import Login from "./Login";
 import Register from "./Register";
 import ProfileUpdate from "./UpdateProfile";
 import ReviewSend from "./ReviewSend";
+import Home from "./Home";
 
 class App extends Component {
   componentDidMount() {
@@ -26,13 +27,16 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            <Route exact path="/search" component={Search}/>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/tutor/:tutorId" component={Profile}/>
-            <Route exact path="/reviews" component={Reviews}/>
-            <Route exact path="/register" component={Register}/>
-            <Route exact path="/updateProfile" component={ProfileUpdate}/>
-            <Route exact path="/updatereview" component={ReviewSend}/>
+              <div className="wrapper">
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/search" component={Search}/>
+                <Route exact path="/login" component={Login}/>
+                <Route exact path="/tutor/:tutorId" component={Profile}/>
+                <Route exact path="/reviews" component={Reviews}/>
+                <Route exact path="/register" component={Register}/>
+                <Route exact path="/updateProfile" component={ProfileUpdate}/>
+                <Route exact path="/updatereview" component={ReviewSend}/>
+              </div>
             <Footer />
           </div>
         </BrowserRouter>

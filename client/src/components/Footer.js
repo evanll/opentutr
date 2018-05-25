@@ -12,24 +12,27 @@ class Footer extends Component {
       <footer>
         <Container>
           <Row className="footer__main">
-            <Col lg={4}>
+            <Col lg={3}>
               <ul>
                 <li><a href="/">About us</a></li>
                 <li><a href="/">Contact</a></li>
                 <li><a href="/">Privacy Policy</a></li>
               </ul>
             </Col>
-            <Col lg={4}>
+            <Col lg={3}>
               <ul>
                 <li><a href="/">About us</a></li>
                 <li><a href="/">Contact</a></li>
                 <li><a href="/">Privacy Policy</a></li>
               </ul>
             </Col>
-            <Col lg={4}>
+            <Col lg={3}>
               <i className="fab fa-2x fa-facebook-square"></i>
               <i className="fab fa-2x fa-twitter-square"></i>
               <i className="fab fa-2x fa-google-plus-square"></i>
+            </Col>
+            <Col lg={3}>
+              <img className="footer__logo" src="../assets/images/logo-nt.svg" alt="logo"/>
             </Col>
           </Row>
         </Container>

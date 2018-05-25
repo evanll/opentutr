@@ -3,8 +3,12 @@
   * and bootstrap overrides
   */
 html,body {
-  height:100%;
+  height: 100% !important;
   background-color: #f1f1f1 !important;
+}
+
+.wrapper {
+  min-height :100%;
 }
 
 header {
@@ -46,4 +50,8 @@ footer {
 
 .footer__copyright-text {
   margin: 1rem 0 !important;
+}
+
+.footer__logo {
+  height: 100px;
 }
