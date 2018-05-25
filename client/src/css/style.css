@@ -7,15 +7,16 @@ html, body {
   background-color: #f1f1f1 !important; }
 
 .wrapper {
-  min-height: 100%; }
+  min-height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px; }
 
 header {
   background-color: #ffffff;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  margin-bottom: 20px; }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .logo {
   height: 50px; }
@@ -30,8 +31,7 @@ header {
 
 footer {
   clear: both;
-  background-color: #a5a5a5;
-  margin-top: 20px; }
+  background-color: #a5a5a5; }
 
 .footer__main {
   padding: 20px; }

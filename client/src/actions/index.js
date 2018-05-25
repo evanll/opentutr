@@ -12,8 +12,8 @@ export const fetchTutor = (tutorId) => async dispatch => {
   dispatch({ type: FETCH_TUTOR, payload: res.data });
 };
 
-export const searchTutor = (subjectId) => async dispatch => {
-  const res = await axios.get("/api/tutors/" + subjectId);
+export const searchTutor = (searchQuery) => async dispatch => {
+  const res = await axios.get("/api/tutors" + searchQuery);
   dispatch({ type: SEARCH_TUTOR, payload: res.data });
 };
 
