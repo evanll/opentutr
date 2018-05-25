@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { searchTutor } from "../actions";
 import { Link } from "react-router-dom";
-import { queryString } from "query-string";
 
 import { getProfileImage } from "../js/helpers";
 import { calculateReviewStars } from "../js/helpers";
