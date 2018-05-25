@@ -4,7 +4,7 @@
  */
 module.exports = function(req, res, next) {
   if (req.headers["x-forwarded-proto"] != "https") {
-    res.redirect(status, "https://" + req.hostname + req.originalUrl);
+    res.redirect("https://" + req.hostname + req.originalUrl);
   } else {
     next();
   }

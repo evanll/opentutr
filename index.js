@@ -9,11 +9,14 @@ const fs = require("fs");
 const forceSSLMiddleware = require("./services/forceSSLMiddleware");
 
 const app = express();
-app.use(express.static("public"));
-app.use(bodyParser.json());
 
 // Production force SSL forceSSLMiddleware
-app.use(forceSSLMiddleware);
+if (process.env.NODE_ENV === "production") {
+  app.use(forceSSLMiddleware);
+}
+
+app.use(express.static("public"));
+app.use(bodyParser.json());
 
 // session management/ cookie parser
 app.use(
