@@ -7,7 +7,8 @@ import { calculateReviewStars } from "../js/helpers";
 
 class Profile extends Component {
   componentDidMount() {
-    this.props.fetchTutor(1);
+    this.props.fetchTutor(this.props.match.params.tutorId);
+    // console.log(this.props);
   }
 
   render() {

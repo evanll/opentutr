@@ -28,7 +28,7 @@ class App extends Component {
             <Header />
             <Route exact path="/search" component={Search}/>
             <Route exact path="/login" component={Login}/>
-            <Route exact path="/tutor/:tutor_id" component={Profile}/>
+            <Route exact path="/tutor/:tutorId" component={Profile}/>
             <Route exact path="/reviews" component={Reviews}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/updateProfile" component={ProfileUpdate}/>
