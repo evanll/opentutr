@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { searchReviews } from "../actions"
 
-import { Container, Row, Col, Card, CardTitle, CardText, Button } from "reactstrap";
+import { Container, Row, Card, CardTitle, CardText } from "reactstrap";
 
 class Review extends Component {
   componentDidMount() {

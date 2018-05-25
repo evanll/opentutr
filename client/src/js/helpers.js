@@ -57,7 +57,7 @@ function checkFileType(file, cb) {
 
 // Static incrementer
 function increment() {
-  if (typeof increment.counter == "undefined") {
+  if (typeof increment.counter === "undefined") {
     increment.counter = 0;
   }
   increment.counter++;
