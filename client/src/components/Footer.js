@@ -39,7 +39,7 @@ class Footer extends Component {
         <Container fluid={true}>
           <Row className ="footer__copyright-block">
             <Col xs={12}>
-              <p className="footer__copyright-text text-center">Copyright © 2018 <a href="">opentutr.com</a></p>
+              <p className="footer__copyright-text text-center">Copyright © 2018 <a href="">opentutr.com</a>. UoB web development project.</p>
             </Col>
           </Row>
         </Container>

@@ -22,7 +22,7 @@ class Home extends Component {
         <div className="bg">
           <div class="hero">
             <h1>Find your Tutor</h1>
-            <h3>An open source project</h3>
+            <h3>A non-profit tutoring project.</h3>
           </div>
         </div>
         <Container>
