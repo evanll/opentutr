@@ -2,16 +2,16 @@
 
 A non-profit tutor booking platform that aims to connect volunteering tutors with students.  
 
-![Screenshot 1](imgs/homepage.png "Screenshot 1")
-![Screenshot 2](imgs/searchview.png "Screenshot 2")
-![Screenshot 3](imgs/profileview.png "Screenshot 3")
+![Screenshot 1](imgs/homepage.png "Screenshot 1")  
+![Screenshot 2](imgs/searchview.png "Screenshot 2")  
+![Screenshot 3](imgs/profileview.png "Screenshot 3")  
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
 
 ## Structure and Information Flow
-![Information flow](imgs/infoflow.png "Information flow")
+![Information flow](imgs/infoflow.png "Information flow")  
 
 By using the above structure, we ensure that the API and the client are seperate. This helps in reducing spaghetti code, and allows for further platform/language independent extensions in the future. The client is not aware of the internal structure of the API. All the client needs to know, is where to send a request.
 
@@ -39,13 +39,13 @@ The user session is stored with a cookie in the client’s browser. The cookie-s
 The Passport.js package is using the session object to keep track of a logged in user in a given session. The function passport.deserializeUser is modified so it retrieves the user information associated with a userid. The req.user property is the result of user deserialization.
 
 ### Future Directions
--Data Security such as securing express and the API access.
--Server side data validation.
--Utilizing a framework such as OWASP to avoid XSS attacks.
--Database tuning in terms of queries and performance.
--Extending the API functionality.
--Extending the website functionality
--Refine the frontend.
+-Data Security such as securing express and the API access  
+-Server side data validation  
+-Utilizing a framework such as OWASP to avoid XSS attacks  
+-Database tuning in terms of queries and performance  
+-Extending the API functionality  
+-Extending the website functionality  
+-Refine the frontend  
 
 ## Built With
 
@@ -69,6 +69,6 @@ Written by:
 - Evan Lalopoulos <evan.lalopoulos.2017@my.bristol.ac.uk>  
 - Harrison Boyns <hb17757.2017@my.bristol.ac.uk>  
 
-Copyright (C) - All Rights Reserved  
-Unauthorized copying of this file is strictly prohibited  
+Copyright (C) 2018 - All rights reserved.  
+Unauthorized copying of this file is strictly prohibited.  
 
