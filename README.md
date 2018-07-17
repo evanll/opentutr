@@ -39,13 +39,11 @@ The user session is stored with a cookie in the client’s browser. The cookie-s
 The Passport.js package is using the session object to keep track of a logged in user in a given session. The function passport.deserializeUser is modified so it retrieves the user information associated with a userid. The req.user property is the result of user deserialization.
 
 ### Future Directions
--Data Security such as securing express and the API access  
--Server side data validation  
--Utilizing a framework such as OWASP to avoid XSS attacks  
--Database tuning in terms of queries and performance  
--Extending the API functionality  
--Extending the website functionality  
--Refine the frontend  
+- Data Security such as securing express and the API access  
+- Server side data validation  
+- Utilizing a framework such as OWASP to prevent cross site scripting attacks  
+- Extending the API functionality  
+- Refine the frontend  
 
 ## Built With
 
