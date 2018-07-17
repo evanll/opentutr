@@ -10,6 +10,17 @@ A non-profit tutor booking platform that aims to connect volunteering tutors wit
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.  
 
+After installing use the following commands.  
+
+Start the server:
+* npm run server  
+
+Start the client:
+* npm run client  
+
+Start server and client:
+* npm run app
+
 ## Structure and Information Flow
 ![Information flow](imgs/infoflow.png "Information flow")  
 
@@ -68,5 +79,5 @@ Written by:
 - Harrison Boyns <hb17757.2017@my.bristol.ac.uk>  
 
 Copyright (C) 2018 - All rights reserved.  
-Unauthorized copying of this file is strictly prohibited.  
+Unauthorized copying is strictly prohibited.  
 
