@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 By using the above structure, we ensure that the API and the client are seperate. This helps in reducing spaghetti code, and allows for further platform/language independent extensions in the future. The client is not aware of the internal structure of the API. All the client needs to know, is where to send a request.
 
 ## Development Overview
-Promises and the async/await syntax, which was introduced in JS ES6 are used consistently in this project.
+Promises and the async/await syntax, introduced in JS ES6, are consistently used in this project.
 
 ### Express
 For this project Express.js is used as a starting point. Of course, various customizations are needed to completely tackle security issues.
